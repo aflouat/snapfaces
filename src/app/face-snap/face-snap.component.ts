@@ -11,6 +11,7 @@ import { FaceSnap } from '../models/face-snap';
 })
 export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!:FaceSnap;
+  //
 
   userHasSnapped!:boolean;
   snapButtonText!:string;
