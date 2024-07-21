@@ -13,16 +13,16 @@ export class FaceSnapService{
         new Date() ),
         new FaceSnap(
           "Pelican",
-          "Mon meilleur ami",
+          "Mon meilleur pelican",
           "https://cdn.pixabay.com/photo/2024/04/21/14/13/pelican-8710717_1280.jpg",
           253,
           new Date() ),
         new FaceSnap(
             "Lapin",
-            "Mon meilleur ami lapin",
+            "Mon lapin préféré",
             "https://cdn.pixabay.com/photo/2016/12/04/21/58/rabbit-1882699_1280.jpg",
             12,
-            new Date() )];
+            new Date() ).withLocation("3 mountain view")];
     public getSnaps(): FaceSnap[]{
         return [...this.snaps];
     }
