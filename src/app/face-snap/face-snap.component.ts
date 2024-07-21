@@ -19,6 +19,7 @@ import { CurrencyPipe, DatePipe, DecimalPipe, NgClass, NgStyle, PercentPipe, Upp
 })
 export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!:FaceSnap;
+  //
 
   userHasSnapped!:boolean;
   snapButtonText!:string;

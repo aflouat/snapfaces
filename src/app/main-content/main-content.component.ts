@@ -10,10 +10,12 @@ import { FaceSnapListComponent } from '../face-snap-list/face-snap-list.componen
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
 })
+ 
 export class MainContentComponent {
   snaps!:FaceSnap[];
 
   
+ 
 
 }
 
