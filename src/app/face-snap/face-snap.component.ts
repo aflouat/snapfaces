@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FaceSnap } from '../models/face-snap';
-import { CurrencyPipe, DatePipe, DecimalPipe, NgClass, NgStyle, PercentPipe, UpperCasePipe } from '@angular/common';
+import {Component, Input, OnInit} from '@angular/core';
+import {FaceSnap} from '../models/face-snap';
+import {CurrencyPipe, DatePipe, DecimalPipe, NgClass, NgStyle, PercentPipe, UpperCasePipe} from '@angular/common';
+import {FaceSnapService} from '../services/face-snaps.service';
 
 
 @Component({
@@ -18,33 +19,45 @@ import { CurrencyPipe, DatePipe, DecimalPipe, NgClass, NgStyle, PercentPipe, Upp
   styleUrl: './face-snap.component.scss'
 })
 export class FaceSnapComponent implements OnInit {
-  @Input() faceSnap!:FaceSnap;
-  //
+  @Input() faceSnap!: FaceSnap;
 
-  userHasSnapped!:boolean;
-  snapButtonText!:string;
+  //
+  constructor(private faceSnapService: FaceSnapService) {
+  }
+
+  userHasSnapped!: boolean;
+  snapButtonText!: string;
 
   ngOnInit(): void {
-
-    this.userHasSnapped=false;
-    this.snapButtonText="Oh Snap";
+    this.initUISnapButton();
   }
 
-  unSnap() {
-    this.faceSnap.removeSnap();
-    this.snapButtonText = 'Oh Snap!';
+  private initUISnapButton() {
     this.userHasSnapped = false;
+    this.snapButtonText = "Oh Snap";
   }
 
-snap() {
-  if(this.userHasSnapped){
-    this.unSnap();
-  }else{
-    this.faceSnap.addSnap();
+
+  snapAddedToUI() {
     this.snapButtonText = 'Oops, unSnap!';
     this.userHasSnapped = true;
   }
 
-}
+
+  onSnap(id: string) {
+    this.userHasSnapped = !this.userHasSnapped;
+
+    if (this.userHasSnapped) {
+      this.faceSnapService.addSnapToFaceById(id);
+      this.snapAddedToUI();
+
+
+    } else {
+      this.faceSnapService.removeSnapToFaceById(id);
+      this.initUISnapButton();
+
+    }
+
+  }
 
 }

@@ -4,7 +4,7 @@ import { FaceSnap } from "../models/face-snap";
 @Injectable({'providedIn':'root'})
 
 export class FaceSnapService{
-    private snaps:FaceSnap[]=[ 
+    private snaps:FaceSnap[]=[
         new FaceSnap(
         "Archibald",
         "Mon meilleur ami",
@@ -26,5 +26,19 @@ export class FaceSnapService{
     public getSnaps(): FaceSnap[]{
         return [...this.snaps];
     }
+    addSnapToFaceById(faceSnapId: string): void {
+        const foundFaceSnap = this.snaps.find(faceSnap => faceSnap.id === faceSnapId);
+        if (!foundFaceSnap) {
+          throw new Error('FaceSnap not found!');
+        }
+        foundFaceSnap.addSnap();
+    }
+  removeSnapToFaceById(faceSnapId: string): void {
+    const foundFaceSnap = this.snaps.find(faceSnap => faceSnap.id === faceSnapId);
+    if (!foundFaceSnap) {
+      throw new Error('FaceSnap not found!');
+    }
+    foundFaceSnap.removeSnap();
+  }
 }
 
