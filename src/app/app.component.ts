@@ -13,6 +13,6 @@ import { HeaderMenuComponent } from './header-menu/header-menu.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent  {
- 
+
   title = 'snapface 2';
 }

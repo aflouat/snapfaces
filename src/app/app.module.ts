@@ -4,12 +4,14 @@ import { AppComponent } from './app.component';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import {Router, RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
    ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [ ]

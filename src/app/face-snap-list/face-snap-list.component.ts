@@ -2,11 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FaceSnap } from '../models/face-snap';
 import { FaceSnapComponent } from "../face-snap/face-snap.component";
 import { FaceSnapService } from '../services/face-snaps.service';
+import {HeaderMenuComponent} from "../header-menu/header-menu.component";
 
 @Component({
   selector: 'app-face-snap-list',
   standalone: true,
-  imports: [FaceSnapComponent],
+  imports: [FaceSnapComponent, HeaderMenuComponent],
   templateUrl: './face-snap-list.component.html',
   styleUrl: './face-snap-list.component.scss'
 })
@@ -19,6 +20,6 @@ constructor(private faceSnapService : FaceSnapService){}
     this.snaps = this.faceSnapService.getSnaps();
    }
 
-  
+
 
 }
