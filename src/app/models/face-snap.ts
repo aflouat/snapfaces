@@ -4,7 +4,8 @@ export class FaceSnap {
   location?:string;
   id: string;
 
-    constructor(public title: string,
+    constructor(
+      public title: string,
         public description:string,
         public imageUrl:string,
         public snaps:number,
