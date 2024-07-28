@@ -1,0 +1,28 @@
+[
+    {
+      "id": "1",
+      "title": "Archibald",
+      "description": "Mon meilleur ami",
+      "imageUrl": "https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg",
+      "createdDate": "2023-07-26T08:30:00.000Z",
+      "snaps": 10
+    },
+    {
+      "id": "2",
+      "title": "Pelican",
+      "description": "Mon meilleur pelican",
+      "imageUrl": "https://cdn.pixabay.com/photo/2024/04/21/14/13/pelican-8710717_1280.jpg",
+      "createdDate": "2024-04-21T14:13:00.000Z",
+      "snaps": 253
+    },
+    {
+      "id": "3",
+      "title": "Lapin",
+      "description": "Mon lapin préféré",
+      "imageUrl": "https://cdn.pixabay.com/photo/2016/12/04/21/58/rabbit-1882699_1280.jpg",
+      "createdDate": "2023-12-04T21:58:00.000Z",
+      "snaps": 12,
+      "location": "3 mountain view"
+    }
+  ]
+  

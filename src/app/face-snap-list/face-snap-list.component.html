@@ -1,6 +1,13 @@
 <app-header-menu></app-header-menu>
+
 <p>Liste de snaps :</p>
-@for (snapElement of snaps;track snapElement.title ) {
+<div *ngIf="faceSnaps$ | async as faceSnaps; else loading">
+
+@for (snapElement of faceSnaps;track snapElement.title ) {
     <app-face-snap [faceSnap]="snapElement"></app-face-snap>
 
   }
+</div>
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
